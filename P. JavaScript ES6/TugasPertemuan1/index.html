@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Shape Area Calculator with JavaScript ES6</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>MATH</h1>
+        <nav class="navbar">
+            <span>Jump to:</span>
+            <ul>
+                <li><a href="#rectangle">Rectangle</a></li>
+                <li><a href="#square">Square</a></li>
+                <li><a href="#triangle">Triangle</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="topic-container">
+        <h1 class="topic">Interactive Shape Area Calculator with JavaScript ES6</h1>
+        <div class="topic-item">
+            <img src="assets/pp.webp" alt="penulis" class="writer-picture">
+            <span class="writer">Umar Mukhtar</span>
+            <span class="date">on Sep 18, 2025</span>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <!-- Persegi Panjang -->
+        <section id="rectangle" class="shape-section">
+            <h2>Persegi Panjang</h2>
+            <div class="explanation">
+                <p>persegi panjang adalah bangun datar dengan dua pasang sisi sejajar yang sama panjang. rumus luas persegi panjang:</p>
+                <p class="formula">luas = panjang x lebar</p>
+                <div class="example">
+                    <h3>contoh perhitungan:</h3>
+                    <p>jika panjang = <span id="contoh-panjang">8</span> cm dan lebar = <span id="contoh-lebar">5</span> cm, maka:</p>
+                    <p>luas = <span id="contoh-panjang-2">8</span> x <span id="contoh-lebar-2">5</span> = <span id="contoh-luas-persegi-panjang">40</span> cm²</p>
+                </div>
+            </div>
+            <div class="calculator">
+                <h3>kalkulator luas persegi panjang</h3>
+                <div class="input-group">
+                    <label for="panjang">panjang:</label>
+                    <input type="number" id="panjang" placeholder="masukkan panjang" min="0" value="8">
+                    <span>cm</span>
+                </div>
+                <div class="input-group">
+                    <label for="lebar">lebar:</label>
+                    <input type="number" id="lebar" placeholder="masukkan lebar" min="0" value="5">
+                    <span>cm</span>
+                </div>
+                <div class="result">
+                    <p>luas: <span id="hasil-persegi-panjang">40</span> cm²</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bujur Sangkar -->
+        <section id="square" class="shape-section">
+            <h2>Bujur Sangkar</h2>
+            <div class="explanation">
+                <p>bujur sangkar adalah persegi panjang dengan semua sisi sama panjang. rumus luas bujur sangkar:</p>
+                <p class="formula">luas = sisi x sisi</p>
+                <div class="example">
+                    <h3>contoh perhitungan:</h3>
+                    <p>jika sisi = <span id="contoh-sisi-persegi">6</span> cm, maka:</p>
+                    <p>luas = <span id="contoh-sisi-persegi-2">6</span> x <span id="contoh-sisi-persegi-3">6</span> = <span id="contoh-luas-persegi">36</span> cm²</p>
+                </div>
+            </div>
+            <div class="calculator">
+                <h3>kalkulator luas bujur sangkar</h3>
+                <div class="input-group">
+                    <label for="sisi-persegi">sisi:</label>
+                    <input type="number" id="sisi-persegi" placeholder="masukkan sisi" min="0" value="6">
+                    <span>cm</span>
+                </div>
+                <div class="result">
+                    <p>luas: <span id="hasil-persegi">36</span> cm²</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Segitiga -->
+        <section id="triangle" class="shape-section">
+            <h2>Segitiga</h2>
+            <div class="explanation">
+                <p>segitiga adalah bangun datar dengan tiga sisi. rumus luas segitiga:</p>
+                <p class="formula">luas = ½ x alas x tinggi</p>
+                <div class="example">
+                    <h3>contoh perhitungan:</h3>
+                    <p>jika alas = <span id="contoh-alas"></span> cm dan tinggi = <span id="contoh-tinggi"></span> cm, maka:</p>
+                    <p>luas = ½ x <span id="contoh-alas-2"></span> x <span id="contoh-tinggi-2"></span> = <span id="contoh-luas-segitiga"></span> cm²</p>
+                </div>
+            </div>
+            <div class="calculator">
+                <h3>kalkulator luas segitiga</h3>
+                <div class="input-group">
+                    <label for="alas">alas:</label>
+                    <input type="number" id="alas" placeholder="masukkan alas" min="0" value="10">
+                    <span>cm</span>
+                </div>
+                <div class="input-group">
+                    <label for="tinggi">tinggi:</label>
+                    <input type="number" id="tinggi" placeholder="masukkan tinggi" min="0" value="8">
+                    <span>cm</span>
+                </div>
+                <div class="result">
+                    <p>luas: <span id="hasil-segitiga">40</span> cm²</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- lokasi -->
+            <div class="footer-section">
+                <h3>Lokasi</h3>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d415.89750722990556!2d112.72983911605492!3d-7.386783931226247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e557a676c8af%3A0xf3af60d1036dd8ab!2sIDESIGN!5e0!3m2!1sid!2sid!4v1757496768347!5m2!1sid!2sid"
+                    width="250" height="150" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+
+            <!-- kontak -->
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p>Email: <a href="mailto:el.mochtaar@gmail.com">el.mochtaar@gmail.com</a></p>
+                <p>WhatsApp: <a href="https://wa.me/6283146978084" target="_blank">+62 831-4697-8084</a></p>
+                <p>Instagram: <a href="https://www.instagram.com/el_mochtaar/" target="_blank">@el_mochtaar</a></p>
+                <p>Github: <a href="https://github.com/UmarUPN" target="_blank">github.com/UmarUPN</a></p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Umar Mukhtar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // fungsi untuk mengupdate contoh perhitungan. jadi angka untk contoh perhitungan bisa diubah
+        const updateContohPerhitungan = () => {
+            // contoh perhitungan persegi panjang
+            const contohPanjang = 8;
+            const contohLebar = 5;
+            const contohLuasPersegiPanjang = hitungLuasPersegiPanjang(contohPanjang, contohLebar);
+            
+            document.getElementById('contoh-panjang').textContent = contohPanjang;
+            document.getElementById('contoh-lebar').textContent = contohLebar;
+            document.getElementById('contoh-panjang-2').textContent = contohPanjang;
+            document.getElementById('contoh-lebar-2').textContent = contohLebar;
+            document.getElementById('contoh-luas-persegi-panjang').textContent = contohLuasPersegiPanjang;
+            
+            // contoh perhitungan bujur sangkar
+            const contohSisiPersegi = 6;
+            const contohLuasPersegi = hitungLuasPersegi(contohSisiPersegi);
+            
+            document.getElementById('contoh-sisi-persegi').textContent = contohSisiPersegi;
+            document.getElementById('contoh-sisi-persegi-2').textContent = contohSisiPersegi;
+            document.getElementById('contoh-sisi-persegi-3').textContent = contohSisiPersegi;
+            document.getElementById('contoh-luas-persegi').textContent = contohLuasPersegi;
+            
+            // contoh perhitungan segitiga
+            const contohAlas = 10;
+            const contohTinggi = 8;
+            const contohLuasSegitiga = hitungLuasSegitiga(contohAlas, contohTinggi);
+            
+            document.getElementById('contoh-alas').textContent = contohAlas;
+            document.getElementById('contoh-tinggi').textContent = contohTinggi;
+            document.getElementById('contoh-alas-2').textContent = contohAlas;
+            document.getElementById('contoh-tinggi-2').textContent = contohTinggi;
+            document.getElementById('contoh-luas-segitiga').textContent = contohLuasSegitiga;
+        };
+
+        // untuk memanggil fungsi untuk mengupdate contoh perhitungan saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', updateContohPerhitungan);
+
+        // fungsi untuk menghitung luas persegi panjang
+        const hitungLuasPersegiPanjang = (panjang, lebar) => {
+            return panjang * lebar;
+        };
+
+        // fungsi untuk menghitung luas bujur sangkar
+        const hitungLuasPersegi = (sisi) => {
+            return sisi * sisi;
+        };
+
+        // fungsi untuk menghitung luas segitiga
+        const hitungLuasSegitiga = (alas, tinggi) => {
+            return 0.5 * alas * tinggi;
+        };
+
+        // event listeners untuk kalkulator persegi panjang
+        document.getElementById('panjang').addEventListener('input', function() {
+            const panjang = parseFloat(this.value) || 0;
+            const lebar = parseFloat(document.getElementById('lebar').value) || 0;
+            const luas = hitungLuasPersegiPanjang(panjang, lebar);
+            document.getElementById('hasil-persegi-panjang').textContent = luas;
+        });
+
+        document.getElementById('lebar').addEventListener('input', function() {
+            const panjang = parseFloat(document.getElementById('panjang').value) || 0;
+            const lebar = parseFloat(this.value) || 0;
+            const luas = hitungLuasPersegiPanjang(panjang, lebar);
+            document.getElementById('hasil-persegi-panjang').textContent = luas;
+        });
+
+        // event listener untuk kalkulator bujur sangkar
+        document.getElementById('sisi-persegi').addEventListener('input', function() {
+            const sisi = parseFloat(this.value) || 0;
+            const luas = hitungLuasPersegi(sisi);
+            document.getElementById('hasil-persegi').textContent = luas;
+        });
+
+        // event listeners untuk kalkulator segitiga
+        document.getElementById('alas').addEventListener('input', function() {
+            const alas = parseFloat(this.value) || 0;
+            const tinggi = parseFloat(document.getElementById('tinggi').value) || 0;
+            const luas = hitungLuasSegitiga(alas, tinggi);
+            document.getElementById('hasil-segitiga').textContent = luas;
+        });
+
+        document.getElementById('tinggi').addEventListener('input', function() {
+            const alas = parseFloat(document.getElementById('alas').value) || 0;
+            const tinggi = parseFloat(this.value) || 0;
+            const luas = hitungLuasSegitiga(alas, tinggi);
+            document.getElementById('hasil-segitiga').textContent = luas;
+        });
+    </script>
+
+</body>
+</html>
