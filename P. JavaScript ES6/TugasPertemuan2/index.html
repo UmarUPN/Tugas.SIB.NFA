@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Data Information System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <h1>SALARY</h1>
+        <nav class="custom-navbar">
+            <span>Jump to:</span>
+            <ul>
+                <li><a href="#formPegawai">Input Form</a></li>
+                <li><a href="#employeeTable">Employee Table</a></li>
+                <li><a href="#footer">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="topic-container">
+        <h1 class="topic">Employee Data Information System with JavaScript ES6</h1>
+        <div class="topic-item">
+            <img src="assets/pp.webp" alt="penulis" class="writer-picture">
+            <span class="writer">Umar Mukhtar</span>
+            <span class="date">on Sep 20, 2025</span>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <!-- Form untuk tambah data pegawai -->
+        <form id="formPegawai" class="form-input">
+            <h2>Mohon isi data berikut</h2>
+
+            <input type="text" id="nama" placeholder="Nama Pegawai" class="form-control mb-4" required>
+            
+            <input type="number" id="umur" placeholder="Umur" class="form-control mb-4" required min="18">
+            
+            <select id="jabatan" class="form-select mb-4" aria-label="Default select example" required>
+                <option value="" selected>Pilih jenis jabatan</option>
+                <option value="Manajer">Manajer</option>
+                <option value="Asisten Manajer">Asisten Manajer</option>
+                <option value="Staff">Staff</option>
+            </select>
+
+            <select id="status" class="form-select mb-4" aria-label="Default select example" required>
+                <option value="" selected>Pilih status</option>
+                <option value="Menikah">Menikah</option>
+                <option value="Jomblo">Jomblo</option>
+            </select>
+            <button type="submit" class="btn btn-warning">Tambah Pegawai</button>
+        </form>
+
+        <table id="employeeTable" class="table table-striped table-hover">
+            <thead align="center">
+                <tr>
+                    <th>No.</th>
+                    <th>Nama Pegawai</th>
+                    <th>Umur</th>
+                    <th>Jabatan</th>
+                    <th>Status</th>
+                    <th>Gaji Pokok</th>
+                    <th>Tunjangan Jabatan</th>
+                    <th>BPJS</th>
+                    <th>Tunjangan Keluarga</th>
+                    <th>Total Gaji</th>
+                </tr>
+            </thead>
+            <tbody id="dataPegawai"></tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="9" align="right"><strong>Total Seluruh Gaji: </strong></td>
+                    <td id="totalSemua" align="center"></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <footer id="footer" class="footer">
+        <div class="footer-container">
+            <!-- lokasi -->
+            <div class="footer-section">
+                <h3>Lokasi</h3>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d415.89750722990556!2d112.72983911605492!3d-7.386783931226247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e557a676c8af%3A0xf3af60d1036dd8ab!2sIDESIGN!5e0!3m2!1sid!2sid!4v1757496768347!5m2!1sid!2sid"
+                    width="250" height="150" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+
+            <!-- kontak -->
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p>Email: <a href="mailto:el.mochtaar@gmail.com">el.mochtaar@gmail.com</a></p>
+                <p>WhatsApp: <a href="https://wa.me/6283146978084" target="_blank">+62 831-4697-8084</a></p>
+                <p>Instagram: <a href="https://www.instagram.com/el_mochtaar/" target="_blank">@el_mochtaar</a></p>
+                <p>Github: <a href="https://github.com/UmarUPN" target="_blank">github.com/UmarUPN</a></p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Umar Mukhtar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const listPegawai = [
+            {nama: "Dodi Prayodi", umur: 25, jabatan: "Manajer", status: "Menikah"}
+        ];
+
+        function getGajiPokok(jabatan) {
+            if (jabatan === "Manajer") return 15000000;
+            if (jabatan === "Asisten Manajer") return 10000000;
+            if (jabatan === "Staff") return 5000000;
+        }
+
+        // function getTunjanganJabatan(getGajiPokok) {
+        //     return getGajiPokok * 0.15;
+        // }
+
+        // function bpjs(getGajiPokok) {
+        //     return getGajiPokok * 0.10;
+        // }
+
+        // function getTunjanganKeluarga(getGajiPokok, status) {
+        //     const tambah = status === "Menikah" ? getGajiPokok * 0.20 : 0;
+        //     return tambah;
+        // }
+
+        function setDataTable() {
+            document.getElementById("dataPegawai").innerHTML = "";
+            let totalSeluruhGaji = 0;
+
+            // listPegawai.forEach(pegawai => {
+            listPegawai.forEach((pegawai, i) => {
+                const gajiPokok = getGajiPokok(pegawai.jabatan);
+                const tunjanganJabatan = gajiPokok * 0.15;
+                const bpjs = gajiPokok * 0.10;
+                const tunjanganKeluarga = pegawai.status === "Menikah" ? gajiPokok * 0.20 : 0;
+                const totalGaji = gajiPokok + tunjanganJabatan + bpjs + tunjanganKeluarga;
+
+                totalSeluruhGaji += totalGaji;
+
+                document.getElementById("dataPegawai").innerHTML += `
+                    <tr align="center">
+                        <td>${i+1}.</td>
+                        <td align="left">${pegawai.nama}</td>
+                        <td>${pegawai.umur} tahun</td>
+                        <td>${pegawai.jabatan}</td>
+                        <td>${pegawai.status}</td>
+                        <td>${formatUang(gajiPokok)}</td>
+                        <td>${formatUang(tunjanganJabatan)}</td>
+                        <td>${formatUang(bpjs)}</td>
+                        <td>${formatUang(tunjanganKeluarga)}</td>
+                        <td>${formatUang(totalGaji)}</td>
+                    </tr>
+                `;
+            })
+
+            document.getElementById("totalSemua").textContent = formatUang(totalSeluruhGaji);
+        }
+
+        setDataTable();
+
+        document.getElementById("formPegawai").addEventListener("submit", function(e) {
+            e.preventDefault(); // cegah reload halaman, supaya data tidak hilang saat submit
+
+            const nama = document.getElementById("nama").value;
+            const umur = document.getElementById("umur").value;
+            const jabatan = document.getElementById("jabatan").value;
+            const status = document.getElementById("status").value;
+
+            listPegawai.push({nama, umur, jabatan, status})
+
+            setDataTable();
+
+            this.reset();
+        })
+
+        function formatUang(angka) {
+            return "Rp" + angka.toLocaleString("id-ID");
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+</body>
+</html>
